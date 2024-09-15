@@ -1,0 +1,167 @@
+@mixin flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*@mixin responsivo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Kodchasan;
+    background-color: #EFEEF3;
+}
+header{
+
+    @include flexbox();
+    width: 100%;  
+    height: 12vh;
+    cursor: url('imagens/cursorLoreal.cur'), auto;
+    
+    img{
+        height: 8vh;
+        padding: 0 3vh;
+    }
+
+    ul{
+        @include flexbox();
+
+        li{
+            list-style: none;
+            font-size: 1.1em;
+            margin: 10px;
+            padding: 2vh;
+
+            &:hover{
+                background-color: #dddaed;
+            }
+        }
+    }
+    
+}
+.fundo{
+    width: 100%;
+}
+
+main{
+    padding: 10vh;
+    @include flexbox();
+    flex-direction: column;
+}
+
+.conteinerA{
+
+    width: 90vw;
+    @include flexbox();
+    justify-content: space-around;
+
+    div{
+        @include flexbox();
+        flex-direction: column;
+        text-align: center;
+        height: 30vh;
+        width: 35vw;
+    }
+    
+    img{
+        width: 30vw;
+    }
+}
+
+.conteinerB{
+
+    padding: 12vh 0;
+    @include flexbox();
+    width: 80vw;
+
+    div{
+        @include flexbox();
+        justify-content: space-around;
+        width: 50vw;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    header {
+        @include flexbox();
+        flex-direction: column;
+        justify-content: center;
+        padding: 32vh 0;
+
+        img{
+        width: 50vw;
+       }
+
+        ul {
+         @include flexbox();
+         flex-direction: column;
+         justify-content: center;
+        }
+    }
+
+    main{
+        padding: 0;
+    }
+
+    section{
+        @include flexbox();
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .conteinerA{
+
+        img{
+            width: 90vw;
+        }
+
+        div{
+            width: 100vw;
+            padding: 10vw 0;
+
+            p{
+                padding: 3vh;
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    .conteinerB{
+
+        width: 95vw;
+
+        h2{
+           text-align: center;
+           font-size: 1.2em;
+        }
+
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 80vw;
+            
+            img{
+                padding: 4vh 0;
+                width: 27vw;
+            }
+        
+        }
+    }
+
+    .fundo {
+        display: none;
+    }
+}
